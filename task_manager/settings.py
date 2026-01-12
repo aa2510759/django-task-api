@@ -12,7 +12,12 @@ SECRET_KEY = config('SECRET_KEY', default='django-insecure-6p010ro*lzkv8=0ho4o1o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=Csv())
+ALLOWED_HOSTS = [
+    "django-task-api-production.up.railway.app", 
+    ".up.railway.app",
+]
+
+
 
 
 # Application definition
