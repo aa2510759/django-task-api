@@ -72,14 +72,14 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 import os
 import dj_database_url
 
+
 DATABASES = {
-    "default": dj_database_url.config(
-        default=os.environ.get("DATABASE_URL"),
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL', default=f'postgresql://postgres:CrabLegend@localhost:5432/taskdb'),
         conn_max_age=600,
-        ssl_require=True,
+        conn_health_checks=True,
     )
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
